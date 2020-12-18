@@ -29,6 +29,8 @@ let result = sortedNumbers.reduce((last: 0, ones: 0,  threes: 1)) { (state, next
 
 let answer1 = result.ones * result.threes
 
+var numberOfVarients: [[Int]: Int] = [:]
+
 func calculate(items: [Int], last: Int) -> Int {
 
   if items.count == 0 || !(items[0] <= last + 3) {
@@ -50,7 +52,7 @@ func calculate(items: [Int], last: Int) -> Int {
   return sum
 }
 
-var numberOfVarients: [[Int]: Int] = [:]
+
 
 let answer2 = calculate(items: sortedNumbers, last: 0)
 
