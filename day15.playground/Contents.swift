@@ -2,8 +2,7 @@ import Foundation
 let rawInput = """
 6,4,12,1,20,0,16
 """
-//
-//0,3,6,0
+
 var input = rawInput.components(separatedBy: ",").compactMap { Int($0) }
 
 while input.count < 100 {
@@ -20,13 +19,12 @@ input = rawInput.components(separatedBy: ",").compactMap { Int($0) }
 var position = 1
 var lastPositions: [Int: Int] = [:]
 for e in input {
-  print(e)
   lastPositions[e] = position
   position += 1
 }
 
 
-// Run this in Xcode Proper otherwise. It will take long time in playground
+// Run this in Xcode proper, it will take long time in playground
 var lastElement = input.last!
 
 while position <= 30_000_000 {
@@ -38,10 +36,6 @@ while position <= 30_000_000 {
     lastElement = 0
   }
   lastPositions[lastLastElement] = position - 1
-  if position % 1_000_000 == 0 {
-    print(position)
-  }
-//  print(lastElement)
   position += 1
 }
 
